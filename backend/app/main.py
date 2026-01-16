@@ -8,6 +8,7 @@ from app.api.admin_auth import router as admin_router
 from app.api.admin_project import router as admin_project_router
 from app.models import Base
 from app.database import engine
+from app.config import settings
 
 # Create tables if they don't exist
 Base.metadata.create_all(bind=engine)
@@ -21,7 +22,8 @@ app = FastAPI(
 )
 
 # CORS configuration
-frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+frontend_url = settings.frontend_url
+
 
 app.add_middleware(
     CORSMiddleware,

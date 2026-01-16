@@ -31,14 +31,14 @@ import {
   Moon,
   Sun,
 } from "lucide-react";
-import LogDetailModal from "../components/logs/logDetailModel";
 import DeleteConfirmationModal from "../components/ui/DeleteConfirmationModal";
-import TimezoneDeleteModal from "../components/logs/timeZoneDeleteModel";
 import { toast } from "react-hot-toast";
 import apiFetch from "../service/api";
 import { useAuth } from "../context/AuthContext";
 import { ThemeContext } from "../context/themeContext";
 import ProjectModal from "../components/projectModal";
+import LogDetailModal from "../components/logModal/logDetailModel";
+import TimezoneDeleteModal from "../components/logModal/timeZoneDeleteModel";
 const LIMIT = 20;
 
 const LogDashboard = () => {

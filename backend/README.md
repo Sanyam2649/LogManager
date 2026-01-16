@@ -43,6 +43,7 @@ Install dependencies (preferably in a virtualenv):
 ```bash
 pip install -r requirements.txt
 ```
+. .venv/bin/activate
 
 Start the server (from the project root):
 

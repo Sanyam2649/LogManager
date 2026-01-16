@@ -5,6 +5,7 @@ from fastapi.security import OAuth2PasswordBearer
 class Settings(BaseSettings):
     app_env: str
     database_url: str
+    frontend_url: str 
     jwt_secret_key: str = "change_me_in_production"
     jwt_algorithm: str = "HS256"
     jwt_access_token_expires_minutes: int = 60
