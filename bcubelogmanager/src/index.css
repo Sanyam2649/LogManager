@@ -28,26 +28,26 @@
 
 [data-theme = "light"]
 {
-  --color-base-100: oklch(98% 0.016 73.684);
-  --color-base-200: oklch(95% 0.038 75.164);
-  --color-base-300: oklch(90% 0.076 70.697);
-  --color-base-content: oklch(40% 0.123 38.172);
-  --color-primary: oklch(0% 0 0);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(22.45% 0.075 37.85);
-  --color-secondary-content: oklch(90% 0.076 70.697);
-  --color-accent: oklch(46.44% 0.111 37.85);
-  --color-accent-content: oklch(90% 0.076 70.697);
-  --color-neutral: oklch(55% 0.195 38.402);
-  --color-neutral-content: oklch(98% 0.016 73.684);
-  --color-info: oklch(42% 0.199 265.638);
-  --color-info-content: oklch(90% 0.076 70.697);
-  --color-success: oklch(43% 0.095 166.913);
-  --color-success-content: oklch(90% 0.076 70.697);
-  --color-warning: oklch(82% 0.189 84.429);
-  --color-warning-content: oklch(41% 0.112 45.904);
-  --color-error: oklch(70% 0.191 22.216);
-  --color-error-content: oklch(39% 0.141 25.723);
+--color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(97.466% 0.011 259.822);
+  --color-base-300: oklch(93.268% 0.016 262.751);
+  --color-base-content: oklch(41.886% 0.053 255.824);
+  --color-primary: oklch(56.86% 0.255 257.57);
+  --color-primary-content: oklch(91.372% 0.051 257.57);
+  --color-secondary: oklch(42.551% 0.161 282.339);
+  --color-secondary-content: oklch(88.51% 0.032 282.339);
+  --color-accent: oklch(59.939% 0.191 335.171);
+  --color-accent-content: oklch(11.988% 0.038 335.171);
+  --color-neutral: oklch(19.616% 0.063 257.651);
+  --color-neutral-content: oklch(83.923% 0.012 257.651);
+  --color-info: oklch(88.127% 0.085 214.515);
+  --color-info-content: oklch(17.625% 0.017 214.515);
+  --color-success: oklch(80.494% 0.077 197.823);
+  --color-success-content: oklch(16.098% 0.015 197.823);
+  --color-warning: oklch(89.172% 0.045 71.47);
+  --color-warning-content: oklch(17.834% 0.009 71.47);
+  --color-error: oklch(73.092% 0.11 20.076);
+  --color-error-content: oklch(14.618% 0.022 20.076);
 
 }
 [data-theme = "dark"]

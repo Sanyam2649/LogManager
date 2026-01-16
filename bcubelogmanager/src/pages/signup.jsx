@@ -7,7 +7,8 @@ import {
   Workflow,
   Phone
 } from "lucide-react";
-import apiFetch from "../service/api";
+
+const API_BASE_URL = import.meta.env.VITE_BACKEND_API_URL || 'http://localhost:8000';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -57,8 +58,12 @@ const handleSubmit = async (e) => {
 
   setLoading(true);
 
-  const res = await apiFetch("/api/v1/projects", {
-    method: "POST",
+  const res = await fetch(`${API_BASE_URL}/api/v1/projects`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+  },
     body: JSON.stringify({
       name: form.name,
       username: form.username,  
@@ -67,7 +72,7 @@ const handleSubmit = async (e) => {
       password: form.password,
     }),
   });
-
+  
   setLoading(false);
 
   if (!res) {

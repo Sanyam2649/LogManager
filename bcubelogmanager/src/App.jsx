@@ -5,7 +5,9 @@ import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import PublicRoute from "./components/publicRoute";
-// import TaskDetail from "./pages/TaskDetail";
+import AdminDashboard from "./pages/adminDashboard";
+import AdminProtectedRoute from "./components/adminProtectedRoute";
+import { ThemeContext } from "./context/themeContext";
 
 function App() {
   return (
@@ -36,14 +38,14 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* <Route
-            path="/todos/:task_id"
+          <Route
+            path="/admin/dashboard"
             element={
-              <ProtectedRoute>
-                <TaskDetail />
-              </ProtectedRoute>
+              <AdminProtectedRoute>
+                <AdminDashboard/>
+              </AdminProtectedRoute>
             }
-          /> */}
+          />
           <Route path="/" element={<Navigate to="/dashboard" />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>

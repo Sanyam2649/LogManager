@@ -15,7 +15,7 @@ class LogEntry(Base):
     id = Column(Integer, primary_key=True)
 
     project_id = Column(Integer, ForeignKey("projects.id"), nullable=False)
-    category_id = Column(Integer, ForeignKey("log_categories.id"), nullable=False)
+    category_id = Column(Integer, ForeignKey("log_categories.id", ondelete="CASCADE"), nullable=False)
 
     timestamp = Column(DateTime(timezone=True), nullable=False)
     level = Column(String(10), nullable=False)

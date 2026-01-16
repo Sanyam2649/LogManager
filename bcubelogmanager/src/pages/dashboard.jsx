@@ -38,6 +38,7 @@ import { toast } from "react-hot-toast";
 import apiFetch from "../service/api";
 import { useAuth } from "../context/AuthContext";
 import { ThemeContext } from "../context/themeContext";
+import ProjectModal from "../components/projectModal";
 const LIMIT = 20;
 
 const LogDashboard = () => {
@@ -52,6 +53,7 @@ const LogDashboard = () => {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showTimezoneModal, setShowTimezoneModal] = useState(false);
+  const [showProject , setShowProject] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
   const { logout } = useAuth();
@@ -283,6 +285,11 @@ const LogDashboard = () => {
           >
             {theme === "light" ? <Moon /> : <Sun />}
           </button>
+          
+          <button className="btn btn-primary" onClick={() => setShowProject(true)}>
+            Project
+          </button>
+          
           <button className="btn btn-outline btn-error" onClick={logout}>
             Logout
           </button>
@@ -721,6 +728,12 @@ const LogDashboard = () => {
           onConfirm={handleBulkDelete}
         />
       )}
+      
+      {
+        showProject && (
+          <ProjectModal onClose={() => setShowProject(false)}/>
+        )
+      }
     </div>
   );
 };

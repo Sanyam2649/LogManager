@@ -5,6 +5,7 @@ from app.core.db import get_db
 from app.core.admin_auth import get_current_admin
 from app.models.project import Project
 from app.schemas.project import ProjectResponse, ProjectUpdateRequest
+from app.models.log_category import LogCategory
 
 router = APIRouter(prefix="/api/v1/admin/projects", tags=["Admin Projects"])
 
@@ -73,13 +74,17 @@ def disallow_project(project_id: int, db: Session = Depends(get_db), admin=Depen
     db.commit()
     return {"status": "disallowed", "project_id": project_id}
 
-
-# Delete project
 @router.delete("/{project_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_project(project_id: int, db: Session = Depends(get_db), admin=Depends(get_current_admin)):
     project = db.query(Project).filter(Project.id == project_id).first()
     if not project:
         raise HTTPException(status_code=404, detail="Project not found")
+
+    # delete categories
+    db.query(LogCategory).filter(
+        LogCategory.project_id == project_id
+    ).delete(synchronize_session=False)
+
+    # delete project
     db.delete(project)
     db.commit()
-    return
